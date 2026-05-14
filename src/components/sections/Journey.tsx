@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { HiAcademicCap, HiCode, HiCube, HiSparkles, HiRocketLaunch } from "react-icons/hi2";
+import { HiAcademicCap, HiCodeBracket, HiCubeTransparent, HiSparkles, HiRocketLaunch } from "react-icons/hi2";
 import type { IconType } from "react-icons";
 import { SectionHeader } from "./Skills";
 
