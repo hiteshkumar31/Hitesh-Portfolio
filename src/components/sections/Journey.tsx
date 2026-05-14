@@ -35,7 +35,7 @@ const items: Item[] = [
       "Started solving DSA problems and sharpening problem-solving",
       "Worked on database integration and authentication systems",
     ],
-    icon: HiCode,
+    icon: HiCodeBracket,
     type: "work",
   },
   {
@@ -48,7 +48,7 @@ const items: Item[] = [
       "Explored machine learning and data analysis projects",
       "Shipped AI-powered and analytics-based applications",
     ],
-    icon: HiCube,
+    icon: HiCubeTransparent,
     type: "cert",
   },
   {
