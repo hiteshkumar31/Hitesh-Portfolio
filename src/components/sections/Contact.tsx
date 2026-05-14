@@ -45,7 +45,7 @@ export function Contact() {
               <h3 className="font-bold mb-4 text-gradient">Get in touch</h3>
               <div className="flex items-center gap-3 mb-3 text-sm">
                 <HiMail className="text-[var(--neon-cyan)] text-lg" />
-                <span className="text-muted-foreground">hello@yourname.dev</span>
+                <span className="text-muted-foreground">khitesh07ml@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <HiLocationMarker className="text-[var(--neon-purple)] text-lg" />

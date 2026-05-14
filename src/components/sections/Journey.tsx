@@ -49,13 +49,13 @@ export function Journey() {
                 <div className="hidden md:block md:w-1/2" />
 
                 <div
-                  className="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full flex items-center justify-center glass neon-border z-10"
-                  style={{ boxShadow: `0 0 20px -4px ${colorMap[item.type]}` }}
+                  className="absolute left-4 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center bg-background neon-border z-10"
+                  style={{ boxShadow: `0 0 24px -4px ${colorMap[item.type]}` }}
                 >
-                  <item.icon className="text-base" style={{ color: colorMap[item.type] }} />
+                  <item.icon className="w-5 h-5" style={{ color: colorMap[item.type] }} />
                 </div>
 
-                <div className="ml-16 md:ml-0 md:w-1/2 md:px-8">
+                <div className="ml-20 md:ml-0 md:w-1/2 md:px-8">
                   <div className="rounded-2xl p-6 glass neon-border">
                     <p className="font-mono text-xs mb-2" style={{ color: colorMap[item.type] }}>{item.year}</p>
                     <h3 className="font-bold text-lg mb-1">{item.title}</h3>
