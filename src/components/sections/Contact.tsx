@@ -23,11 +23,21 @@ export function Contact() {
     if (err) { setError(err); return; }
     setError("");
     setStatus("sending");
-    // Backend wiring lands in pass 2 (auth + admin + email)
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
+      setError("Couldn't send your message. Please try again.");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
