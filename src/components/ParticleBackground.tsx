@@ -21,10 +21,10 @@ export function ParticleBackground() {
         background: { color: { value: "transparent" } },
         fpsLimit: 60,
         particles: {
-          number: { value: 70, density: { enable: true } },
+          number: { value: 110, density: { enable: true } },
           color: { value: ["#7c3aed", "#6366f1", "#0ea5e9"] },
           shape: { type: "circle" },
-          opacity: { value: { min: 0.2, max: 0.5 } },
+          opacity: { value: { min: 0.25, max: 0.55 } },
           size: { value: { min: 1, max: 2.5 } },
           links: {
             enable: true,
@@ -45,7 +45,7 @@ export function ParticleBackground() {
             onHover: { enable: true, mode: "grab" },
           },
           modes: {
-            grab: { distance: 180, links: { opacity: 0.95, color: "#0f172a" } },
+            grab: { distance: 220, links: { opacity: 1, color: "#020617" } },
           },
         },
         detectRetina: true,
