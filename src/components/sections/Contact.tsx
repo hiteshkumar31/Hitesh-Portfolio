@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { HiMail, HiLocationMarker } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import { SectionHeader } from "./Skills";
 
 export function Contact() {
@@ -56,8 +57,12 @@ export function Contact() {
             <div className="rounded-2xl glass neon-border p-6">
               <p className="text-xs font-mono text-muted-foreground mb-3">// follow</p>
               <div className="flex gap-2">
-                {[FaGithub, FaLinkedin, FaTwitter].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-lg flex items-center justify-center glass hover:glow-purple hover:text-[var(--neon-purple)] transition-all">
+                {[
+                  { Icon: FaGithub, href: "https://github.com/hiteshkumar31" },
+                  { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hitesh-kumar-7o7o" },
+                  { Icon: SiLeetcode, href: "https://leetcode.com/u/HiteshDSA/" },
+                ].map(({ Icon, href }, i) => (
+                  <a key={i} href={href} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg flex items-center justify-center glass hover:glow-purple hover:text-[var(--neon-purple)] transition-all">
                     <Icon />
                   </a>
                 ))}
