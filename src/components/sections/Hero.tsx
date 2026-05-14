@@ -25,7 +25,7 @@ export function Hero() {
           className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6"
         >
           <span className="block">Hello, I'm</span>
-          <span className="block text-gradient">Your Name</span>
+          <span className="block text-gradient">Hitesh Kumar</span>
         </motion.h1>
 
         <motion.div
@@ -93,10 +93,9 @@ export function Hero() {
           className="flex items-center justify-center gap-3"
         >
           {[
-            { icon: FaGithub, href: "https://github.com" },
-            { icon: FaLinkedin, href: "https://linkedin.com" },
-            { icon: FaTwitter, href: "https://twitter.com" },
-            { icon: SiLeetcode, href: "https://leetcode.com" },
+            { icon: FaGithub, href: "https://github.com/hiteshkumar31" },
+            { icon: FaLinkedin, href: "https://www.linkedin.com/in/hitesh-kumar-7o7o" },
+            { icon: SiLeetcode, href: "https://leetcode.com/u/HiteshDSA/" },
           ].map(({ icon: Icon, href }, i) => (
             <a
               key={i}
