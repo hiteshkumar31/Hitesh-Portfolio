@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { HiMail, HiLocationMarker } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import { SectionHeader } from "./Skills";
 
 export function Contact() {
@@ -22,11 +23,21 @@ export function Contact() {
     if (err) { setError(err); return; }
     setError("");
     setStatus("sending");
-    // Backend wiring lands in pass 2 (auth + admin + email)
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch {
+      setStatus("error");
+      setError("Couldn't send your message. Please try again.");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
@@ -45,7 +56,7 @@ export function Contact() {
               <h3 className="font-bold mb-4 text-gradient">Get in touch</h3>
               <div className="flex items-center gap-3 mb-3 text-sm">
                 <HiMail className="text-[var(--neon-cyan)] text-lg" />
-                <span className="text-muted-foreground">hello@yourname.dev</span>
+                <span className="text-muted-foreground">khitesh07ml@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <HiLocationMarker className="text-[var(--neon-purple)] text-lg" />
@@ -56,8 +67,12 @@ export function Contact() {
             <div className="rounded-2xl glass neon-border p-6">
               <p className="text-xs font-mono text-muted-foreground mb-3">// follow</p>
               <div className="flex gap-2">
-                {[FaGithub, FaLinkedin, FaTwitter].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-lg flex items-center justify-center glass hover:glow-purple hover:text-[var(--neon-purple)] transition-all">
+                {[
+                  { Icon: FaGithub, href: "https://github.com/hiteshkumar31" },
+                  { Icon: FaLinkedin, href: "https://www.linkedin.com/in/hitesh-kumar-7o7o" },
+                  { Icon: SiLeetcode, href: "https://leetcode.com/u/HiteshDSA/" },
+                ].map(({ Icon, href }, i) => (
+                  <a key={i} href={href} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg flex items-center justify-center glass hover:glow-purple hover:text-[var(--neon-purple)] transition-all">
                     <Icon />
                   </a>
                 ))}
