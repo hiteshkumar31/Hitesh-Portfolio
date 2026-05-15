@@ -69,15 +69,15 @@ export function Hero() {
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
           <a
-            href="/resume.pdf"
-            download
-            className="group relative inline-flex items-center gap-2 px-7 py-3 rounded-full font-medium overflow-hidden"
-            style={{ background: "var(--gradient-hero)" }}
-          >
-            <HiDownload className="text-lg" />
-            Download Resume
-            <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform" />
-          </a>
+  href="public/HiteshResume.pdf"
+  download="Hitesh_Kumar_Resume.pdf"
+  className="group relative inline-flex items-center gap-2 px-7 py-3 rounded-full font-medium overflow-hidden"
+  style={{ background: "var(--gradient-hero)" }}
+>
+  <HiDownload className="text-lg" />
+  Download Resume
+  <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+</a>
           <a
             href="#projects"
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-medium neon-border hover:glow-cyan transition-all"
@@ -94,7 +94,7 @@ export function Hero() {
         >
           {[
             { icon: FaGithub, href: "https://github.com/hiteshkumar31" },
-            { icon: FaLinkedin, href: "https://www.linkedin.com/in/hitesh-kumar-7o7o" },
+            { icon: FaLinkedin, href: "https://www.linkedin.com/in/hitesh-kumar-7o7o/" },
             { icon: SiLeetcode, href: "https://leetcode.com/u/HiteshDSA/" },
           ].map(({ icon: Icon, href }, i) => (
             <a

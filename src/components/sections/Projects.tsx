@@ -15,58 +15,58 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Neural Canvas",
-    description: "AI-powered design tool that turns prompts into editable vector compositions in real time.",
-    tags: ["Next.js", "OpenAI", "Postgres", "Framer Motion"],
+    title: "Whatsapp Chat Analyzer",
+    description: "Designed and developed a web application that analyzes WhatsApp chat data, providing users with insights into their messaging habits, including word clouds, activity timelines, and sentiment analysis.",
+    tags: ["Streamlit", "Pandas", "matplotlib", "wordcloud"],
     category: "AI / ML",
-    github: "https://github.com",
-    demo: "https://example.com",
-    accent: "from-fuchsia-500 to-violet-500",
+    github: "https://github.com/hiteshkumar31/whatsapp-chat-analyzer",
+    demo: "https://whatsapp-chat-analysis-10.onrender.com/",
+    accent: "/WhatsappChatAnalyser.png",
   },
   {
-    title: "OrbitCRM",
-    description: "Lightweight CRM with realtime pipelines, smart segmentation, and a focus-first inbox.",
-    tags: ["React", "Node", "Supabase", "Tailwind"],
+    title: "LeetCode Clone",
+    description: "A web application that allows users to practice coding problems similar to LeetCode.",
+    tags: ["React", "Node", "MongoDB", "Tailwind"],
     category: "Full-Stack",
-    github: "https://github.com",
+    github: "https://github.com/hiteshkumar31/LeetCode-Project",
     demo: "https://example.com",
-    accent: "from-cyan-400 to-blue-500",
+    accent: "/LeetcodeClone.png",
   },
   {
-    title: "PulseDash",
-    description: "Realtime analytics dashboard for product teams — query, chart, and alert in one place.",
-    tags: ["TypeScript", "ClickHouse", "Recharts"],
+    title: "Social Media Dashboard",
+    description: "A real-time social media project which mainly focuses on CRUD operations and data visualization using Recharts. It allows users to manage their social media accounts, schedule posts, and analyze engagement metrics through interactive charts.",
+    tags: ["Django", "Pillow", "Python"],
     category: "Full-Stack",
-    github: "https://github.com",
-    demo: "https://example.com",
-    accent: "from-emerald-400 to-cyan-500",
+    github: "https://github.com/hiteshkumar31/Social-Media",
+    demo: "https://social-media-3-49m7.onrender.com/",
+    accent: "/SocialMedia.png",
   },
   {
-    title: "VoxelFolio",
-    description: "Interactive 3D portfolio template with WebGL scenes and accessibility-first interactions.",
-    tags: ["Three.js", "React", "GLSL"],
+    title: "Swiggy Clone",
+    description: "A web application that mimics the functionality of Swiggy, allowing users to browse restaurants, view menus, and place orders.",
+    tags: ["React", "Redux", "Axios", "Tailwind"],
     category: "Frontend",
-    github: "https://github.com",
-    demo: "https://example.com",
-    accent: "from-pink-500 to-orange-400",
+    github: "https://github.com/hiteshkumar31/Swiggy-Clone",
+    demo: "https://swiggy-clone-me2u.vercel.app/",
+    accent: "/Swiggy.png",
   },
   {
-    title: "PromptLab",
-    description: "Self-hosted prompt engineering workspace with versioning, evals, and team sharing.",
-    tags: ["Next.js", "OpenAI", "Drizzle"],
+    title: "Founder Mental Coach",
+    description: "An AI-powered mental wellness application designed specifically for startup founders, offering personalized coaching, stress management techniques, and mindfulness exercises to help navigate the unique challenges of entrepreneurship.",
+    tags: ["Streamlit", "Python", "MongoDB"],
     category: "AI / ML",
-    github: "https://github.com",
+    github: "https://github.com/hiteshkumar31/Founder-Mental-Coach",
     demo: "https://example.com",
-    accent: "from-violet-500 to-blue-500",
+    accent: "/FounderMentalCoach.png",
   },
   {
-    title: "ShipKit UI",
-    description: "Open-source component library with theming, motion presets, and DX-first APIs.",
-    tags: ["React", "Tailwind", "Radix"],
-    category: "Frontend",
-    github: "https://github.com",
+    title: "Student Study Portal",
+    description: "A web application designed to help students manage their study schedules, track progress, and collaborate with peers.",
+    tags: ["Django", "Python", "SQLite"],
+    category: "Full-Stack",
+    github: "https://github.com/hiteshkumar31/Student-Study-Portal",
     demo: "https://example.com",
-    accent: "from-cyan-400 to-fuchsia-500",
+    accent: "/StudentStudyPortal.png",
   },
 ];
 
@@ -115,16 +115,32 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       whileHover={{ y: -8 }}
       className="group relative rounded-2xl glass neon-border overflow-hidden flex flex-col"
     >
-      <div className={`relative h-44 bg-gradient-to-br ${project.accent} overflow-hidden`}>
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)",
-          backgroundSize: "24px 24px",
-        }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-        <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-mono bg-black/40 backdrop-blur text-white/90">
-          {project.category}
-        </span>
-      </div>
+<div className="relative h-44 overflow-hidden">
+  {project.accent.startsWith("/") ? (
+    <img
+      src={project.accent}
+      alt={project.title}
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <div className={`w-full h-full bg-gradient-to-br ${project.accent}`} />
+  )}
+
+  <div
+    className="absolute inset-0 opacity-30"
+    style={{
+      backgroundImage:
+        "linear-gradient(rgba(255,255,255,0.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.1) 1px,transparent 1px)",
+      backgroundSize: "24px 24px",
+    }}
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+
+  <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-mono bg-black/40 backdrop-blur text-white/90">
+    {project.category}
+  </span>
+</div>
 
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-bold mb-2 group-hover:text-gradient transition-all">

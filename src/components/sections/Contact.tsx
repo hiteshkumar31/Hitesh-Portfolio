@@ -4,6 +4,7 @@ import { HiMail, HiLocationMarker } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { SectionHeader } from "./Skills";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -24,12 +25,16 @@ export function Contact() {
     setError("");
     setStatus("sending");
     try {
-      const res = await fetch("/api/public/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
+await emailjs.send(
+  "service_528e1g6",
+  "template_gib56sn",
+  {
+    from_name: form.name,
+    from_email: form.email,
+    message: form.message,
+  },
+  "hdMHPV0wmU2ETdBai"
+);
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 4000);
