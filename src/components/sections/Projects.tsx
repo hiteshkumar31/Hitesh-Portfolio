@@ -30,7 +30,7 @@ const projects: Project[] = [
     category: "Full-Stack",
     github: "https://github.com/hiteshkumar31/LeetCode-Project",
     demo: "https://example.com",
-    accent: "/LeetcodeClone.png",
+    accent: "/Leetcode.png",
   },
   {
     title: "Social Media Dashboard",
